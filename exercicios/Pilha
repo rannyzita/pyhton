@@ -1,0 +1,49 @@
+class Stack:
+    def __init__(self):
+        self.stack = []
+        
+    def esta_vazia(self):
+        if self.stack:
+            print('\nA pilha não está vazia.\n')
+        else:
+            print('\nA pilha está vazia.\n')
+            
+    def empilhar(self, item):
+        self.stack.append(item)
+        print(f'\nItem: "{item}" adicionado com sucesso!\n')
+        
+    def desempilhar(self):
+        if self.stack:
+            print(f'O livro mais recente é: {self.stack[-1]}\n')
+            livro_removido = self.stack.pop(-1)
+            print(f'"\n{livro_removido}" removido com sucesso!')
+        else:
+            print('A pilha está vazia')    
+    
+    def topo(self):
+        print(f'\nO livro "{self.stack[-1]}" está no topo da pilha.\n') 
+        
+stack = Stack()    
+
+while True:
+    print('1 - Empilhar')
+    print('2 - Desempilhar') 
+    print('3 - Topo')
+    print('4 - Está vazia') 
+    print('5 - Sair')
+    
+    opção = input('\nDigite a opção desejada: \n')
+    
+    if opção == '1':
+        item = input('Digite o item: ')
+        stack.empilhar(item)
+    elif opção == '2':
+        stack.desempilhar()
+    elif opção == '3':
+        stack.topo()
+    elif opção == '2':
+        stack.esta_vazia()
+    elif opção == '4':
+        break
+    else:
+        print('Opção inválida.')   
