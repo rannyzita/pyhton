@@ -1,0 +1,59 @@
+#questao usando fila
+class Queue:
+    def __init__(self):
+        #atributo
+        self.queue = []
+        
+    #métodos    
+    def to_add(self, item):
+        self.queue.append(item)
+           
+    def delete(self):
+        if self.queue:
+            item_removed = self.queue.pop(0)
+            print(f'Item {item_removed} removido!')
+        else:
+            print('Lista vazia, mona;(')    
+        
+    def peek(self):
+        return self.queue[-1]
+        
+    def empty(self):
+        if self.queue:
+            return 'True'
+        else:
+            return 'False'
+               
+    def size_queue(self):
+        return len(self.queue)        
+        
+#criação do objeto
+    queue = Queue()
+            
+while True:
+    
+    print('\n')
+    print('1 - Adicionar')       
+    print('\n2 - Remover')
+    print('\n3 - Visualizar o próximo elemento')
+    print('\n4 - Verificar lista')
+    print('\n5 - Tamanho da filha')
+    print('\n6 - Sair\n')
+    
+    option = input('Digite a opção: ')
+    
+    if option == '1':
+        item = input('Digite o item que vc quer adicionar: ')
+        queue.to_add(item)
+    elif option == '2':
+        queue.delete()
+    elif option == '3':
+        queue.peek()
+    elif option == '4':
+        queue.empty()
+    elif option == '5':
+        queue.size_queue()
+    elif option == '6':
+        break    
+    else:
+        print('Opção Inválida')
