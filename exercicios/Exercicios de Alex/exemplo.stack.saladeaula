@@ -1,0 +1,42 @@
+class Stack:
+  def __init__(self):
+    self.lista = [] #atributos
+    
+  #adicionar, push é em stack
+  def push(self, elemento):
+    self.lista.append(elemento) #adiciona elemento no final da lista
+
+  apagar oq ta no indice -1
+  def pop(self):
+    self.lista.pop()
+
+  def peek(self): 
+    return self.lista[-1]
+  
+  #verifica se tem lista 
+  def isEmpty(self):
+    if not self.lista:
+      print('a lista esta vazia')
+    else: 
+      for itens in self.lista:
+        return itens
+
+  def listar(self):
+    for count in self.lista:
+      print(count)
+      
+#criação do objeto
+pilha = Stack()
+
+While True:
+  livro = input('Digite o nome do livro: ')
+  pilha.push(livro)
+
+  if pilha.isEmpty():
+    print('A pilha esta vazia')
+  else:
+  print('A pilha nao esta vazia')
+
+  pilha.listar()
+
+  break;
