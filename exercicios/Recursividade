@@ -1,0 +1,19 @@
+#Quando uma funçaõ chama a si mesma
+
+def fatorial(numero):
+    
+    if numero != 0:
+            return numero*fatorial(numero-1)
+    else:
+        return 1
+        
+final = 0       
+
+while True:
+    numero = int(input('Digite um número fatorial: \n'))
+    
+    resultado = fatorial(numero)  
+    
+    final = final + resultado
+    
+    print(f'!{numero} = {final}')      
