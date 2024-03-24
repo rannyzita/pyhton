@@ -6,7 +6,5 @@ def fibonacci(n):
             
 n = int(input('Digite o enésimo numero: '))
 
-resultado = fibonacci(n)
-
 for count in range(n):
-    print(fibonacci(count), end=" ")
+    print(fibonacci(count), espaço=" ")
