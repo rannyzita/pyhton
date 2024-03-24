@@ -45,7 +45,7 @@ class Queue:
     #remove o primeiro elemento
     def dequeue(self):
         #se a lista nao estiver vazia, remove
-        if self.is_empty():
+        if not self.is_empty():
         #em vez de remover por indice
             self.fila.pop(0)
         else:
