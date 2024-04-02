@@ -36,11 +36,11 @@ class Queue:
     def cancelar(self, item):
         if self.lista:
             for elemento in self.lista:
-                if elemento[0] == item:
+                if item in elemento:
                     self.lista.remove(elemento)
                     return True
-                else:
-                    return False
+            else:
+                return False
 
     def consultar(self):
         print(self.lista)
