@@ -26,7 +26,7 @@ class Queue:
     def adicionar(self, item):
         categoria = processar_categoria()
         self.lista.append([item, categoria])
-        ordem_chegada(self.lista)
+        self.lista = ordem_chegada(self.lista)
 
     def atender(self):
         if self.lista:
