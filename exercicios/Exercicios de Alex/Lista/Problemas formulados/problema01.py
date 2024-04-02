@@ -32,7 +32,7 @@ class Queue:
 
     def is_empty(self, item):
         #se a fila nao tiver vazia
-        if not self.fila:
+        if self.fila:
             return True
         else:
             return False
