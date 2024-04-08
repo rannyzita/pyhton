@@ -12,7 +12,7 @@ class Livro:
 class Biblioteca:
     def __init__(self):
         self.lista = []
-        self.empréstimos = []
+        self.emprestimos = []
         
     def verificar(self):
         if self.lista:
@@ -26,16 +26,16 @@ class Biblioteca:
     def emprestar(self, item):
         for livro in self.lista:
             if livro.titulo == item and livro.quantidade_exemplares_disponiveis > 0:
-                self.empréstimos.append(item)
+                self.emprestimos.append(livro)
                 livro.quantidade_exemplares_disponiveis -= 1
                 return livro.quantidade_exemplares_disponiveis
         else:
             return False    
                 
     def devolver_livro(self, item):
-        for livro in self.empréstimos:
+        for livro in self.emprestimos:
             if livro.titulo == item:
-                self.empréstimos.remove(item)
+                self.emprestimos.remove(livro)
                 livro.quantidade_exemplares_disponiveis += 1
                 return True
         else:
