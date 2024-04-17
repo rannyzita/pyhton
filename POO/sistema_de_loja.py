@@ -48,7 +48,7 @@ class Eletronico(Produto):
         #desconto de 25%
         preco_com_desconto = 0
         quantidade_desconto = self.get_preco()*0.25
-        preco_com_desconto = quantidade_desconto
+        preco_com_desconto = - quantidade_desconto
         return preco_com_desconto
 
     def verificar_disponibilidade(self):
@@ -81,7 +81,7 @@ class Roupa(Produto):
         #desconto de 20%
         preco_com_desconto = 0
         quantidade_desconto = self.get_preco()*0.20
-        preco_com_desconto = quantidade_desconto
+        preco_com_desconto = - quantidade_desconto
         return preco_com_desconto
 
     def verificar_disponibilidade(self):
@@ -114,7 +114,7 @@ class Alimento(Produto):
         #desconto de 15%
         preco_com_desconto = 0
         quantidade_desconto = self.get_preco()*0.15
-        preco_com_desconto = quantidade_desconto
+        preco_com_desconto = - quantidade_desconto
         return preco_com_desconto
 
     def verificar_disponibilidade(self):
@@ -148,7 +148,8 @@ while True:
     print('3 - Mostrar desconto do produto')
     print('4 - Mostrar quantidades do produto')
     print('5 - Geral do Produto')
-    print('6 - Sair do sistema')
+    print('6 - Geral dos 3 produtos')
+    print('7 - Sair do sistema')
 
     opc = int(input('\nDigite a opção desejada: '))
 
@@ -236,6 +237,7 @@ while True:
                 nome = input('\nDigite o nome do produto que você quer ver o desconto: ')
                 if Eletronico.get_nome() == nome:
                     resultado = Eletronico.calcular_desconto()
+                    print('\nO desconto do produto vai ser de:')
                     print(f'\n{nome}: {resultado}')
                     break
                 else:
@@ -244,6 +246,7 @@ while True:
                 nome = input('\nDigite o nome do produto que você quer ver o desconto: ')
                 if Roupa.get_nome() == nome:
                     resultado = Roupa.calcular_desconto()
+                    print('\nO desconto do produto vai ser de:')
                     print(f'\n{nome}: {resultado}')
                     break
                 else:
@@ -252,6 +255,7 @@ while True:
                 nome = input('\nDigite o nome do produto que você quer ver o desconto: ')
                 if Alimento.get_nome == nome:
                     resultado = Alimento.calcular_desconto()
+                    print('\nO desconto do produto vai ser de:')
                     print(f'\n{nome}: {resultado}')
                     break
                 else:
@@ -334,6 +338,37 @@ while True:
             else:
                 print('\nOpção Inválida.')
     elif opc == 6:
+        nome_eletronico = input('\nDigite o nome do Eletrônico que você quer ver o geral: ')
+        nome_roupa = input('\nDigite o nome da roupa que você quer ver o geral: ')
+        nome_alimento = input('\nDigite o nome do produto que você quer ver o geral: ')
+        if Eletronico.get_nome() == nome_eletronico:
+            print(f'\nNome: {Eletronico.get_nome()}')
+            print(f'Marca: {Eletronico.get_marca()}')
+            print(f'Quantidade: {Eletronico.get_quantidade()}')
+            print(f'Preço sem desconto: {Eletronico.get_preco()}')
+            print(f'Preço com desconto: {Eletronico.get_preco() - Eletronico.calcular_desconto()}')
+            break
+        else:
+            print('Produto não consta no sistema.')
+        if Roupa.get_nome() == nome_roupa:
+            print(f'\nNome: {Roupa.get_nome()}')
+            print(f'Tamanho: {Roupa.get_tamanho()}')
+            print(f'Quantidade: {Roupa.get_quantidade()}')
+            print(f'Preço sem desconto: {Roupa.get_preco()}')
+            print(f'Preço com desconto: {Roupa.get_preco() - Roupa.calcular_desconto()}')
+            break
+        else:
+            print('Produto não consta no sistema.')
+        if Alimento.get_nome == nome_alimento:
+            print(f'\nNome: {Alimento.get_nome()}')
+            print(f'Data de validade: {Alimento.get_marca()}')
+            print(f'Quantidade: {Alimento.get_quantidade()}')
+            print(f'Preço sem desconto: {Alimento.get_preco()}')
+            print(f'Preço com desconto: {Alimento.get_preco() - Alimento.calcular_desconto()}')
+            break
+        else:
+            print('\nProduto não consta no sistema.')
+    elif opc == 7:
         break
     else:
         print('\nOpção Inválida')
